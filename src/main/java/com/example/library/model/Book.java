@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@AllArgsConstructor @NoArgsConstructor @Setter @Getter
+@NoArgsConstructor @Setter @Getter
 public class Book {
 
     @Id
@@ -20,4 +20,10 @@ public class Book {
 
     @ManyToOne
     private Author author;
+
+    public Book(String name, double price, Author author) {
+        this.name = name;
+        this.price = price;
+        this.author = author;
+    }
 }

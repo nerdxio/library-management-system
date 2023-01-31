@@ -29,6 +29,10 @@ public class BookService {
         return repository.save(book);
     }
 
+    public List<Book> insert(List<Book> books){
+        return repository.saveAll(books);
+    }
+
     public Book update(Book book) {
         return repository.save(book);
     }
