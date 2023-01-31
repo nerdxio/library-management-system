@@ -25,6 +25,9 @@ public class AuthorService {
     public Author insert(Author author){
         return repository.save(author);
     }
+    public List<Author> insert(List<Author> author){
+        return repository.saveAll(author);
+    }
     public Author update(Author author){
         return repository.save(author);
     }

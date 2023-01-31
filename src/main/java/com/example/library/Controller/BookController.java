@@ -13,7 +13,7 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping("/author")
+@RequestMapping("/book")
 public class BookController {
 
     private final BookService service;
