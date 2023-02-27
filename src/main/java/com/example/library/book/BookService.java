@@ -1,9 +1,6 @@
-package com.example.library.service;
+package com.example.library.book;
 
-import com.example.library.model.Author;
-import com.example.library.model.Book;
-import com.example.library.repository.AuthorRepository;
-import com.example.library.repository.BookRepository;
+import com.example.library.error.RecordNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,8 +14,10 @@ public class BookService {
         this.repository = repository;
     }
 
+
     public Book findById(Long id) {
-        return repository.findById(id).orElseThrow();
+        return repository.findById(id)
+                .orElseThrow(() -> new RecordNotFoundException("The Record not found " + id));
     }
 
     public List<Book> findAll() {
@@ -29,7 +28,7 @@ public class BookService {
         return repository.save(book);
     }
 
-    public List<Book> insert(List<Book> books){
+    public List<Book> insert(List<Book> books) {
         return repository.saveAll(books);
     }
 

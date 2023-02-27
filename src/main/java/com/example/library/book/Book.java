@@ -1,13 +1,16 @@
-package com.example.library.model;
+package com.example.library.book;
 
+import com.example.library.author.Author;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.jetbrains.annotations.NotNull;
 
 @Entity
-@NoArgsConstructor @Setter @Getter
+@NoArgsConstructor
+@Setter
+@Getter
 public class Book {
 
     @Id
@@ -15,8 +18,8 @@ public class Book {
     private Long id;
 
     private String name;
-
-    private  double price;
+    @NotNull
+    private double price;
 
     @ManyToOne
     private Author author;

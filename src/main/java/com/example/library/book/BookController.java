@@ -1,9 +1,5 @@
-package com.example.library.Controller;
+package com.example.library.book;
 
-import com.example.library.model.Author;
-import com.example.library.model.Book;
-import com.example.library.service.AuthorService;
-import com.example.library.service.BookService;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -40,7 +36,7 @@ public class BookController {
         return ResponseEntity.created(location).body(service.insert(book));
     }
 
-    @PutMapping
+    @PutMapping("/")
     public ResponseEntity<Book> update(@RequestBody Book book) {
         service.update(book);
         return ResponseEntity.noContent().build();

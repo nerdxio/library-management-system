@@ -1,8 +1,5 @@
-package com.example.library.Controller;
+package com.example.library.author;
 
-import com.example.library.model.Author;
-import com.example.library.service.AuthorService;
-import org.jetbrains.annotations.NotNull;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -31,14 +28,14 @@ public class AuthorController {
     }
 
     @PostMapping("/")
-    public ResponseEntity<Author> insert(@RequestBody @NotNull Author author) {
+    public ResponseEntity<Author> insert(@RequestBody Author author) {
         URI location = ServletUriComponentsBuilder
                 .fromCurrentRequest().path("/{id}")
                 .buildAndExpand(author.getId()).toUri();
         return ResponseEntity.created(location).body(service.insert(author));
     }
 
-    @PutMapping
+    @PutMapping("/")
     public ResponseEntity<Author> update(@RequestBody Author author) {
         service.update(author);
         return ResponseEntity.noContent().build();
