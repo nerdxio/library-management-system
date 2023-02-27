@@ -1,7 +1,6 @@
 package com.example.library.author;
 
-import com.example.library.author.Author;
-import com.example.library.author.AuthorRepository;
+
 import org.springframework.stereotype.Service;
 
 import java.util.List;

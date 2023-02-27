@@ -12,10 +12,10 @@ import static org.junit.jupiter.api.Assertions.*;
 public class AuthorRepositoryTest {
     final AuthorRepository repository;
 
-//    @Test
-//    void findByNameNotFoundTest(){
-//        var author = repository.findByName("hasan");
-//        assertEquals(false,author.isPresent());
-//    }
+    @Test
+    void findByNameNotFoundTest(){
+        var author = repository.findByName("hasan");
+        assertEquals(false,author.isPresent());
+    }
 
 }
